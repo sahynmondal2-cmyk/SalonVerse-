@@ -19,9 +19,12 @@ import NotFound from './pages/NotFound';
 import CustomerDashboard from './pages/customer/Dashboard';
 import AdminDashboard from './pages/admin/Dashboard';
 
+import ErrorBoundary from './components/common/ErrorBoundary';
+
 function App() {
   return (
-    <Router basename="/SalonVerse-/">
+    <ErrorBoundary>
+      <Router basename="/SalonVerse-/">
       <div className="min-h-screen flex flex-col selection:bg-champagne selection:text-white">
         <Navbar />
         <main className="flex-grow">
@@ -49,6 +52,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </ErrorBoundary>
   );
 }
 export default App;
