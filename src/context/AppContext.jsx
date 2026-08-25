@@ -24,6 +24,9 @@ export const AppProvider = ({ children }) => {
   const [offers, setOffers] = useState(offersData);
   const [lookbook, setLookbook] = useState(lookbookData);
 
+  const [memberships, setMemberships] = useState(membershipsData);
+  const [customers, setCustomers] = useState(customersData);
+
   useEffect(() => {
     localStorage.setItem('theme', theme);
     if (theme === 'dark') {
@@ -76,6 +79,8 @@ export const AppProvider = ({ children }) => {
       favorites, addFavorite, removeFavorite, isFavorite,
       appointments, setAppointments,
       membership, setMembership,
+      memberships, setMemberships,
+      customers, setCustomers,
       services, setServices,
       stylists, setStylists,
       packages, setPackages,
