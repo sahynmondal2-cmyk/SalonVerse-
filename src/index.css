@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #120E0D;
+  --color-surface: #1D1715;
+  --color-cream: #F5EEE4;
+  --color-champagne: #C9A77A;
+  --color-rose: #B9827A;
+  --color-muted: #9E948B;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-espresso antialiased font-sans transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-espresso text-cream;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .dark .glass {
+    @apply bg-black/20 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-espresso text-cream dark:bg-cream dark:text-espresso rounded hover:bg-surface dark:hover:bg-gray-200 transition-colors font-medium text-sm tracking-wide;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border border-espresso text-espresso dark:border-cream dark:text-cream rounded hover:bg-espresso/5 dark:hover:bg-cream/10 transition-colors font-medium text-sm tracking-wide;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A77A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B9827A;
+}
