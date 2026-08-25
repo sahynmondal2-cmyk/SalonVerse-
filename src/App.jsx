@@ -21,7 +21,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/SalonVerse-/">
       <div className="min-h-screen flex flex-col selection:bg-champagne selection:text-white">
         <Navbar />
         <main className="flex-grow">
